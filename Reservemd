@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Reservation</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Restaurant Reservation</h1>
+  <form id="reservationForm" onsubmit="submitForm(event)">
+<body>
+</body>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+</body>
+<body>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+</body>
+<body>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required>
+</body>
+<body>
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+</body>
+<body>
+      <label for="time">Time:</label>
+      <input type="time" id="time" required>
+</body>
+<body>
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" min="1" required>
+</body>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<head>
+      <style>
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #066409;
+  color: rgb(51, 3, 3);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0c3f0f;
+}
+
+// script class.js
+  function highlightMenuItem(event) {
+  var menuItems = document.getElementsByClassName('menu-item');
+  for (var i = 0; i < menuItems.length; i++) {
+    menuItems[i].classList.remove('active');
+  }
+  event.target.classList.add('active');
+}
+
+function submitForm(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Perform validation
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var date = document.getElementById('date').value;
+  var time = document.getElementById('time').value;
+  var guests = document.getElementById('guests').value;
+
+  if (name === '' || email === '' || phone === '' || date === '' || time === '' || guests === '') {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Form submission logic goes here
+  // You can send the form data to a server or perform any other desired action
+}
